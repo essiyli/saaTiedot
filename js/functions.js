@@ -5,7 +5,7 @@ const description_span = document.querySelector('#description')
 const icon_img = document.querySelector('img')
 const url = 'https://api.openweathermap.org/data/2.5/weather?'
 const icon_url = 'https://openweathermap.org/img/wn/'
-const api_key = ''
+const api_key = '43c34787b7eaebcbd48013b36c9ed5dc'
 
 
     
@@ -35,7 +35,7 @@ const getWeather = (lat, lng) => {
         .then(response =>{
             const json = response.data
             temp_span.innerHTML = json.main.temp + '&#8451;'
-            speed_span.innerHTML = json.wind.speed + 'm/s'
+            speed_span.innerHTML = json.wind.speed + ' m/s'
             direction_span.innerHTML = json.wind.deg + '&#176;'
             description_span.innerHTML = json.weather[0].description
             const image = icon_url + json.weather[0].icon +'@2x.png'
